@@ -12,7 +12,7 @@ namespace entrada_evento
     {
         static void Main(string[] args)
         {
-            inicio i = new inicio();
+            Taquilla i = new Taquilla();
         }
 
     }

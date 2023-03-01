@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace entrada_evento
 {
-    class inicio
+    class Taquilla
     {
         Validador validador;
-        public inicio()
+        public Taquilla()
             
         {
             validador = this.ruta();
