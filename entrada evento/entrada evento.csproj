@@ -46,6 +46,7 @@
     <Compile Include="Archivo.cs" />
     <Compile Include="Csv.cs" />
     <Compile Include="excepciones.cs" />
+    <Compile Include="Hakerman.cs" />
     <Compile Include="Taquilla.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

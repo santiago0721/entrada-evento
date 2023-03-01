@@ -11,6 +11,10 @@ namespace entrada_evento
     class Taquilla
     {
         Validador validador;
+        Archivo lectura;
+        Hakerman hakerman;
+
+
         public Taquilla()
             
         {
@@ -22,7 +26,7 @@ namespace entrada_evento
 
         public Validador ruta() 
         {
-            Archivo lectura;
+            
             Console.WriteLine("ingrese la ruta");
             string archivo = Console.ReadLine();
             try
@@ -59,8 +63,15 @@ namespace entrada_evento
             {
                 Console.WriteLine("ingrese id");
                 string id = Console.ReadLine();
-                string s = validador.Validar_persona(id);
-                Console.WriteLine(s);
+                if (validador.Validar_persona(id).Item2)
+                {
+                    string s = validador.Validar_persona(id).Item1;
+                    Console.WriteLine(s);
+                }
+                else
+                    hakerman = new Hakerman(validador);
+                    validador.lista = hakerman.cambiar();
+                
 
                 Console.WriteLine("si desea ver otro invitado presione enter , " +
                     "de lo contrario presione cualquier letra y enter ");
@@ -69,6 +80,23 @@ namespace entrada_evento
             }
             
         }
+
+
+        public void actualizar_lista() 
+        {
+            List<string[]> nueva_lista;
+
+            foreach (string[] persona in validador.lista) 
+            {
+  
+            }
+
+
+
+        }
+
+        
+            
    
     }
 

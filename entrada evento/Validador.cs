@@ -10,7 +10,7 @@ namespace entrada_evento
     class Validador
 
     {
-        List<string[]> lista;
+        public List<string[]> lista;
         public Validador(List<string[]> lista_personas) 
         {
             lista = lista_personas;
@@ -24,7 +24,7 @@ namespace entrada_evento
             { return false; }
         }
 
-        private (bool,int) Validar_en_lista(string id)
+        public (bool,int) Validar_en_lista(string id)
         {   int contador = 0;
             foreach (string[] persona in lista) 
             {
@@ -105,7 +105,7 @@ namespace entrada_evento
             return false;
         }
 
-        public string Validar_persona(string id) 
+        public (string,bool) Validar_persona(string id) 
         {
             bool persona_en_lista;
             int indice_persona;
@@ -117,15 +117,15 @@ namespace entrada_evento
                 {
                     if (validar_email(indice_persona)) 
                     {
-                        return "esta persona puede ingresar";
+                        return ("esta persona puede ingresar", true);
                     }
-                    else { return "correo invalido , No puede entrar"; }
+                    else { return ("correo invalido , No puede entrar", false); }
                 }
                 else
-                    return "no tiene la edad suficiente";
+                    return ("no tiene la edad suficiente",false);
             }
             else
-                return "no se encontro la persona en la lista";
+                return ("no se encontro la persona en la lista",false);
         }
 
     }
